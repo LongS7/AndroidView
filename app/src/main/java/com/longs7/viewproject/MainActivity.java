@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -48,5 +49,9 @@ public class MainActivity extends AppCompatActivity {
 
         spinner.setAdapter(adapter);
         listView.setAdapter(productAdapter);
+
+        listView.setOnItemClickListener((parent, view, position, id) -> {
+            Toast.makeText(this, list.get(position).getName(), Toast.LENGTH_SHORT).show();
+        });
     }
 }
